@@ -1,0 +1,17 @@
+#app{
+    min-height: 100dvh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: #A69CAC;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 460px){
+    #app{
+        padding: 2rem 1rem;
+    }
+}
