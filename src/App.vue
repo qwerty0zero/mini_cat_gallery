@@ -83,7 +83,7 @@ onMounted(() => {
       />
     </template>
   </CustomGallery>
-  <button :class="{ fixed: isTall }" @click="loadCats">Generate New Cats</button>
+  <button :class="{ fixed: isTall }" @click="loadCats">Odśwież koty</button>
 
   <ModalWindow
       v-if="isModalOpen"
