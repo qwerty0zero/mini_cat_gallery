@@ -71,8 +71,7 @@ onMounted(() => {
 
 
 <template>
-
-  <CustomGallery ref="customGallery" >
+  <CustomGallery ref="customGallery">
     <template #default>
       <DefaultImage
           v-for="(img, i) in cats"
@@ -81,6 +80,12 @@ onMounted(() => {
           @click="openModal(i)"
           :class="{ extraMargin: isTall }"
       />
+
+      <div v-if="cats.length === 0"
+           v-for="n in 6"
+           :key="n"
+           class="fake-skeleton"
+      ></div>
     </template>
   </CustomGallery>
   <button :class="{ fixed: isTall }" @click="loadCats">Odśwież koty</button>
@@ -95,6 +100,20 @@ onMounted(() => {
 </template>
 
 <style scoped>
+
+.fake-skeleton {
+  width: 100%;
+  min-height: 300px;
+  border-radius: 0.5rem;
+  border: 2px solid #161B33;
+  background: linear-gradient(110deg, #161B33 8%, #2a2f4d 18%, #161B33 33%);
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+}
+@keyframes shine {
+  to { background-position-x: -200%; }
+}
+
 button{
   width: 100%;
   padding: 1rem;
