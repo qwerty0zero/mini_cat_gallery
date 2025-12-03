@@ -1,4 +1,4 @@
-const API_KEY =  process.env.API_KEY
+const API_KEY  =   import.meta.env.VITE_API_KEY;
 
 export async function fetchCats() {
     const res = await fetch("https://api.thecatapi.com/v1/images/search?limit=6", {
